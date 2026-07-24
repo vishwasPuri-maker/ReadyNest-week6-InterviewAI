@@ -1,0 +1,210 @@
+// ── Auth Pages Styles — Awesomic Design System ──────────────────────────────
+
+.auth-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: var(--surface-canvas);
+}
+
+// ── Left Brand Panel ─────────────────────────────────────────────────────────
+.auth-brand {
+    flex: 0 0 45%;
+    background-color: var(--surface-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-64);
+    position: relative;
+    overflow: hidden;
+
+    // Subtle grid pattern
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 420px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-8);
+        color: var(--color-snow);
+        font-size: var(--text-body-lg);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--spacing-48);
+
+        svg {
+            color: var(--color-ember);
+        }
+    }
+
+    h1 {
+        font-size: var(--text-heading);
+        line-height: var(--leading-heading);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-snow);
+        margin-bottom: var(--spacing-20);
+    }
+
+    p {
+        font-size: var(--text-body);
+        line-height: var(--leading-body);
+        color: var(--color-ash);
+        margin-bottom: var(--spacing-48);
+    }
+
+    &__stats {
+        display: flex;
+        gap: var(--spacing-32);
+    }
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__stat-value {
+        font-size: var(--text-subheading);
+        font-weight: var(--font-weight-bold);
+        color: var(--color-snow);
+    }
+
+    &__stat-label {
+        font-size: var(--text-caption);
+        color: var(--color-fog);
+    }
+}
+
+// ── Right Form Panel ─────────────────────────────────────────────────────────
+.auth-form-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-48);
+}
+
+.auth-form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-form-header {
+    margin-bottom: var(--spacing-36);
+
+    h2 {
+        font-size: var(--text-heading-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--color-obsidian);
+        margin-bottom: var(--spacing-8);
+    }
+
+    p {
+        font-size: var(--text-body);
+        color: var(--color-fog);
+    }
+}
+
+// ── Form ─────────────────────────────────────────────────────────────────────
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+}
+
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+
+    label {
+        font-size: 14px;
+        font-weight: var(--font-weight-medium);
+        color: var(--color-graphite);
+    }
+
+    input {
+        width: 100%;
+        background-color: var(--surface-card);
+        border: 1px solid var(--color-cloud);
+        border-radius: var(--radius-inputs);
+        padding: 12px 16px;
+        font-family: var(--font-cosmica);
+        font-size: 14px;
+        color: var(--color-graphite);
+        outline: none;
+        transition: border-color 0.2s ease;
+
+        &::placeholder {
+            color: var(--color-ash);
+        }
+
+        &:focus {
+            border-color: var(--color-obsidian);
+        }
+    }
+}
+
+.auth-submit-btn {
+    width: 100%;
+    margin-top: var(--spacing-8);
+    padding: 14px 16px !important;
+    font-size: 15px !important;
+    font-weight: var(--font-weight-medium) !important;
+}
+
+.auth-switch {
+    margin-top: var(--spacing-24);
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-fog);
+
+    a {
+        color: var(--color-obsidian);
+        font-weight: var(--font-weight-medium);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// ── Responsive ───────────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+    .auth-page {
+        flex-direction: column;
+    }
+
+    .auth-brand {
+        flex: none;
+        padding: var(--spacing-36) var(--spacing-24);
+
+        h1 {
+            font-size: var(--text-subheading);
+        }
+
+        p {
+            display: none;
+        }
+
+        &__stats {
+            display: none;
+        }
+    }
+
+    .auth-form-panel {
+        padding: var(--spacing-36) var(--spacing-24);
+    }
+}

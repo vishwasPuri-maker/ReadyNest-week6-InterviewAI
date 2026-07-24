@@ -1,0 +1,89 @@
+// ── Button System — Awesomic Design ──────────────────────────────────────────
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--font-cosmica);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  // ── Primary Dark Filled ──
+  &.primary-button {
+    background-color: var(--color-obsidian);
+    color: var(--color-snow);
+    border: 1.5px solid #2c2e34;
+    border-radius: var(--radius-buttons);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-subtle);
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+    }
+  }
+
+  // ── Ghost (White Pill) — for nav ──
+  &.ghost-button {
+    background-color: var(--color-snow);
+    color: var(--color-iron);
+    border: 1px solid var(--color-iron);
+    border-radius: var(--radius-pills);
+    padding: 12px 20px;
+
+    &:hover {
+      background-color: var(--color-paper);
+      color: var(--color-obsidian);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  // ── Neutral (Light Subtle) ──
+  &.neutral-button {
+    background-color: var(--surface-subtle-card);
+    color: var(--color-graphite);
+    border: none;
+    border-radius: var(--radius-buttons);
+    padding: 12px 16px;
+
+    &:hover {
+      background-color: var(--color-cloud);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  // ── Ember Accent ──
+  &.ember-button {
+    background-color: var(--color-ember);
+    color: var(--color-snow);
+    border: none;
+    border-radius: var(--radius-buttons);
+    padding: 12px 16px;
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+    }
+  }
+}
