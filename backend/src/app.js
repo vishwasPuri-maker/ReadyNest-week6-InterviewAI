@@ -10,8 +10,18 @@ app.use((req, res, next) => {
     console.log("Incoming:", req.method, req.url);
     next();
 });
+const allowedOrigins = process.env.FRONTEND_URL 
+    ? process.env.FRONTEND_URL.split(",") 
+    : ["http://localhost:5174", "http://localhost:5173"];
+
 app.use(cors({
-    origin: "http://localhost:5174",
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }))
 
