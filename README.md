@@ -17,6 +17,15 @@ Standard interview preparation is broken:
 
 ---
 
+## What Makes This Different from Standard Full-Stack Apps
+
+Unlike typical CRUD-based full-stack applications that only read and write static database records, InterviewAI operates as an intelligent AI orchestrator:
+- **Strict Schema Enforcement:** Leverages type-safe Zod schema binding integrated directly into the Google Gemini API configuration using `responseSchema`. This guarantees structured JSON outputs on every single call, completely preventing standard AI hallucinations or UI formatting glitches.
+- **Dynamic Content Pipeline:** Instead of serving static templates, the application dynamically constructs unique interview question banks, specific interviewer evaluation goals, and customized roadmap timelines on the fly.
+- **Binary Processing Stream:** Handles raw binary streams (PDF uploads) on the backend using `pdf-parse`, extracts plain text vectors, and feeds them into the GenAI context wrapper without needing external doc converters.
+
+---
+
 ## Project Architecture
 
 ```
