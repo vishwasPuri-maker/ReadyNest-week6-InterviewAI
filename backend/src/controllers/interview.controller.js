@@ -18,7 +18,7 @@ async function generateInterViewReportController(req, res) {
     let resumeText = ""
     if (req.file) {
         try {
-            const resumeContent = await (new pdfParse.PDFParse(Uint8Array.from(req.file.buffer))).getText()
+            const resumeContent = await pdfParse(req.file.buffer)
             resumeText = resumeContent.text || ""
         } catch (error) {
             console.error("PDF Parsing error:", error)
